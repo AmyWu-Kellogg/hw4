@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get("/", { :controller => "places", :action => "index" })
-  resources "entries"
-  resources "places"
-  resources "sessions"
-  resources "users"
+  root "places#index"
+  resources :places do
+    resources :entries
+  end
+  resources :users, only: [:new, :create]
+  resource :session, only: [:new, :create, :destroy]
 end

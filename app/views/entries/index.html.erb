@@ -1,6 +1,4 @@
-<h1 class="mb-4"><%= @place["name"] %></h1>
-
-<h2 class="mb-3">My Entries</h2>
+<h1 class="mb-4">Entries for <%= @place["name"] %></h1>
 
 <div class="row">
   <% for entry in @entries %>
@@ -20,7 +18,5 @@
   <% end %>
 </div>
 
-<p>
-  <a href="/places/<%= @place["id"] %>/entries/new" class="btn btn-primary">New Entry</a>
-  <a href="/places" class="btn btn-secondary ms-2">Back to All Places</a>
-</p>
+<a href="/places/<%= @place["id"] %>/entries/new" class="btn btn-primary">New Entry</a>
+<a href="/places/<%= @place["id"] %>" class="btn btn-secondary ms-2">Back to Place</a>

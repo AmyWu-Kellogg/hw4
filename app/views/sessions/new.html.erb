@@ -1,6 +1,22 @@
-<h1>Login</h1>
+<h1 class="mb-4">Login</h1>
 
-<form action="/sessions" method="post">
+<div class="row">
+  <div class="col-md-6">
+    <form action="/session" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <button>Login<button>
-</form>
+      <div class="mb-3">
+        <label for="email_input" class="form-label">Email</label>
+        <input type="email" name="email" id="email_input" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label for="password_input" class="form-label">Password</label>
+        <input type="password" name="password" id="password_input" class="form-control">
+      </div>
+
+      <button class="btn btn-primary">Login</button>
+      <a href="/users/new" class="btn btn-link">Create an account</a>
+    </form>
+  </div>
+</div>
